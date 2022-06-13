@@ -13,25 +13,24 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaFeatures: {
-            jsx: true
+            jsx: true,
         },
         ecmaVersion: 'latest',
-        sourceType: 'module'
+        sourceType: 'module',
     },
-    plugins: [
-        'react',
-        'jsx-a11y',
-        '@typescript-eslint'
-    ],
+    plugins: ['react', 'jsx-a11y', '@typescript-eslint'],
     rules: {
-        'prettier/prettier': ["error", {
-            'printWidth': 80,
-            'tabWidth': 4,
-            'singleQuote': true,
-            'trailingComma': 'all',
-            'arrowParens': 'always',
-            'semi': false,
-        }],
+        'prettier/prettier': [
+            'error',
+            {
+                printWidth: 80,
+                tabWidth: 4,
+                singleQuote: true,
+                trailingComma: 'es5',
+                arrowParens: 'always',
+                semi: true,
+            },
+        ],
         'react/react-in-jsx-scope': 'off',
         'react/prop-types': 'off',
         'jsx-a11y/alt-text': [
@@ -52,7 +51,11 @@ module.exports = {
             version: 'detect',
         },
         'import/parsers': {
-            [require.resolve('@typescript-eslint/parser')]: ['.ts', '.tsx', '.d.ts'],
+            [require.resolve('@typescript-eslint/parser')]: [
+                '.ts',
+                '.tsx',
+                '.d.ts',
+            ],
         },
-    }
-}
+    },
+};
